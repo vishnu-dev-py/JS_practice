@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+</head>
+<body>
+<h1>Guess The Number From 1 to 10</h1><br><br>
+<h2 id="chance_h">Chance : 10</h2>
+<input type="number" id="inp_box">
+<button onclick="check_num()" id="btn">Check</button>
+
+<h2 id="result"></h2><br><br>
+
+<h1 id="score">Score : 0</h1>
+
+
+
+
+</body>
+<script>
+    var score = 0
+    var chance = 10
+    function check_num() {
+        var inp = Number(document.getElementById('inp_box').value)
+        var random_num = Math.random()
+        if (inp == Math.round(random_num * 10)) {
+            score += 1
+            chance -= 1
+            document.getElementById('inp_box').value = ""
+            document.getElementById('chance_h').textContent = "Chance : "+chance
+            alert("Your Guess Is Correct...")
+            document.getElementById('result').textContent = "Your Guess Is Correct..."
+
+        }
+        else if (chance == 1) {
+            alert("Game Over...!")
+            document.getElementById('score').textContent = "Score :" + score
+            refresh()
+
+
+
+        }
+
+        else {
+            document.getElementById('result').textContent = "Your Guess Is Wrong...!"
+            document.getElementById('inp_box').value = ""
+            chance -= 1
+            document.getElementById('chance_h').textContent = "Chance : "+chance
+        }
+        document.getElementById('score').textContent = "Score :" + score
+
+    }
+
+    function refresh(){
+        score = 0
+        chance = 10
+        document.getElementById('inp_box').value = ""
+        document.getElementById('result').textContent = ""
+        document.getElementById('chance_h').textContent = "Chance : 10"
+    }
+
+</script>
+
+</html>
