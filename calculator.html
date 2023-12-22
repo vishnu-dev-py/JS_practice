@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+<div class="row justify-content-center">
+    <h1>Calculator</h1>
+<label for="num1">Enter 1st Number:</label>
+<input id="num1" type="number" placeholder="Number"><br><br>
+<label for="num2">Enter 2nd Number:</label>
+<input id="num2" type="number" placeholder="Number"><br><br>
+<button onclick="calculate(this.id)" id="add" style="background-color: green;color: aliceblue;border-radius:30px ">ADD</button>
+<button onclick="calculate(this.id)" id="sub" style="background-color: green;color: aliceblue;border-radius:30px ">SUB</button>
+<button onclick="calculate(this.id)" id="mul" style="background-color: green;color: aliceblue;border-radius:30px ">MUL</button>
+<button onclick="calculate(this.id)" id="div" style="background-color: green;color: aliceblue;border-radius:30px ">DIV</button>
+<button onclick="calculate(this.id)" id="clean" style="background-color: red;color: aliceblue;border-radius:30px ">Clear</button>
+<br><br>
+<h2 id="result">
+</h2>
+</div>
+</body>
+<script>
+    function calculate(operation){
+        var num1 = Number(document.getElementById('num1').value)
+        var num2 = Number(document.getElementById('num2').value)
+        if (operation == 'add'){
+           document.getElementById('result').textContent = "Total : "+(num1+num2)
+        }
+        if (operation == 'sub'){
+           document.getElementById('result').textContent = "Subtraction : "+(num1-num2)
+        }
+        if (operation == 'mul'){
+           document.getElementById('result').textContent = "Multiplication : "+(num1*num2)
+        }
+        if (operation == 'div'){
+           document.getElementById('result').textContent = "Division : "+(num1/num2)
+        }
+        if (operation == 'clean'){
+           document.getElementById('result').textContent = ""
+            document.getElementById('num1').value = ""
+            document.getElementById('num2').value = ""
+        }
+        else{
+           document.getElementById('result').textContent = "Invalid Input...!"
+        }
+    }
+</script>
+</html>
