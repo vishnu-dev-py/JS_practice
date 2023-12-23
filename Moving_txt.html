@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1 style="color:black;padding:200px;" id="header1">Move Me ^.^ Change Me</h1>
+
+<input id="color" type="text" placeholder="Enter Color">
+<button onClick="changePosition(this.id)" id="up">UP</button>
+<button onClick="changePosition(this.id)" id="down">DOWN</button>
+<button onClick="changePosition(this.id)" id="left">LEFT</button>
+<button onClick="changePosition(this.id)" id="right">RIGHT</button>
+
+<button onClick="headerColorChange()">Change Color</button>
+</body>
+<script>
+function changePosition(id){
+
+var header = document.getElementById("header1")
+if (id == 'up'){
+header.style.paddingTop = (Number((header.style.paddingTop).replace("px", "")) - 100) + "px"
+}
+if (id == 'down'){
+header.style.paddingTop = (Number((header.style.paddingTop).replace("px", "")) + 100) + "px"
+}
+if (id == 'left'){
+header.style.paddingLeft = (Number((header.style.paddingLeft).replace("px", "")) - 100) + "px"
+}
+if (id == 'right'){
+header.style.paddingLeft = (Number((header.style.paddingLeft).replace("px", "")) + 100) + "px"
+}
+
+}
+
+function headerColorChange(){
+var temp = document.getElementById("header1")
+var color = document.getElementById("color").value
+temp.style.color = color;
+
+}
+
+</script>
+</html>
