@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Popup</title>
+</head>
+
+<style>
+    .over_lay {
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        opacity: 0.8;
+        z-index: 1;
+        display: none;
+    }
+
+    .popup_box {
+        position: absolute;
+        z-index: 2;
+        background-color: aliceblue;
+        border-radius: 20px;
+        width: 40%;
+        color: black;
+        padding: 20px;
+        left: 30%;
+        top: 10%;
+        display: none;
+    }
+
+    #show_btn {
+        height: 40px;
+        width: 100px;
+        border-radius: 20px;
+        background-color: silver;
+        font-size: 20px;
+        color: #0a0808;
+        cursor: pointer;
+    }
+
+    #close_btn {
+        height: 30px;
+        width: 80px;
+        border-radius: 20px;
+        background-color: red;
+        font-size: 20px;
+        color: #0a0808;
+        cursor: pointer;
+    }
+
+    #ok_btn {
+        height: 30px;
+        width: 80px;
+        border-radius: 20px;
+        background-color: green;
+        font-size: 20px;
+        color: #0a0808;
+        cursor: pointer;
+        text-align: center;
+    }
+
+</style>
+
+
+<body>
+<button onclick="show()" id="show_btn">show</button>
+
+<div class="over_lay"></div>
+<div class="popup_box">
+    <p>"Empower your digital journey with a robust foundation and dynamic versatility as a Full Stack Developer,
+        seamlessly bridging the realms of front-end finesse and back-end brilliance to craft cutting-edge, end-to-end
+        solutions."</p>
+    <button onclick="close_popup()" id="close_btn">Close</button>
+    <button onclick="close_popup()" id="ok_btn">Ok</button>
+</div>
+</body>
+
+<script>
+    var popup_box = document.querySelector(".popup_box")
+    var over_lay = document.querySelector(".over_lay")
+
+    function show() {
+        popup_box.style.display = "block"
+        over_lay.style.display = "block"
+
+    }
+
+    function close_popup() {
+
+        popup_box.style.display = "none"
+        over_lay.style.display = "none"
+
+    }
+</script>
+
+</html>
