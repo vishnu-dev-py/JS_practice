@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+</head>
+<body>
+<h1>To Do List</h1><br>
+<input type="text" id="inp">
+<button onclick="add()">ADD</button>
+<br><br>
+<ul id="txt-container">
+
+</ul>
+</body>
+<script>
+
+    function add() {
+        var temp_li = document.createElement('li')
+        var txt_container = document.getElementById('txt-container')
+        temp_li.innerHTML = document.getElementById('inp').value + " <button onclick='delete_item(event)' style='border-radius: 20px;background-color:red;color: aliceblue'>Delete</button>"
+        txt_container.append(temp_li)
+        document.getElementById('inp').value = ""
+    }
+
+    function delete_item(event) {
+        event.target.parentElement.remove()
+    }
+
+</script>
+</html>
